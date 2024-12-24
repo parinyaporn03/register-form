@@ -43,6 +43,21 @@ const Register = () => {
       })
     );
   };
+  const handleFillForm = () => {
+    form.setFieldsValue({
+      username: "User",
+      password: "123456",
+      email: "user@g.com  ",
+    });
+    localStorage.setItem(
+      "formData",
+      JSON.stringify({
+        username: "User",
+        password: "123456",
+        email: "user@g.com  ",
+      })
+    );
+  };
 
   return (
     <div className="flex  h-screen w-screen  justify-center items-center select-none">
@@ -121,11 +136,19 @@ const Register = () => {
               type="primary"
               htmlType="button"
               onClick={handleReset}
-              className="submit mx-3 px-5"
+              className="submit mx-1 px-5"
             >
               Reset
             </Button>
-            <Button type="primary" htmlType="submit" className="submit mx-3">
+            <Button
+              type="primary"
+              htmlType="button"
+              onClick={handleFillForm}
+              className="submit mx-1 px-5"
+            >
+              Fill
+            </Button>
+            <Button type="primary" htmlType="submit" className="submit mx-1">
               Submit
             </Button>
           </Form.Item>
@@ -142,7 +165,7 @@ const Register = () => {
           }}
           src={Minions}
           draggable="false"
-          className=" absolute w-56 -left-36 -bottom-4 "
+          className=" absolute w-56 -left-40 -bottom-4 "
         />
       </div>
       <ModalRegister isOpen={isModalOpen} isClose={handleClose} />
