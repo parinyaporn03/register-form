@@ -17,11 +17,11 @@ const ModalRegister = ({ isOpen, isClose }: ModalRegisterProps) => {
       open={isOpen}
       closable={false}
       footer={
-        <Button type="primary" onClick={isClose}>
+        <Button className="w-fit" type="primary" onClick={isClose}>
           Close
         </Button>
       }
-      className="modal"
+      className="modal select-none"
     >
       <div
         className="flex justify-around
@@ -39,7 +39,11 @@ const ModalRegister = ({ isOpen, isClose }: ModalRegisterProps) => {
           </div>
         </div>
         <div className="relative bg-white border-2 border-white p-[5px] rounded-lg">
-          <img src={Bello} className="w-24 border-2 border-black  rounded-lg" />
+          <img
+            draggable="false"
+            src={Bello}
+            className="w-24 border-2 border-black  rounded-lg "
+          />
           <div className="stamp absolute -top-4 rotate-[29deg] -right-6">
             <div className="text-white">Belloo</div>
           </div>
