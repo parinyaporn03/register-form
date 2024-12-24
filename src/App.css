@@ -297,3 +297,15 @@ h3:hover {
       0 0/80% 40%,
     linear-gradient(var(--c) 50%, #0000 0) top/80% 40% repeat-y;
 }
+.star {
+  width: 150px;
+  aspect-ratio: 1;
+  background: #e3bb0a;
+  clip-path: polygon(
+    50% 0,
+    calc(50% * (1 + sin(0.4turn))) calc(50% * (1 - cos(0.4turn))),
+    calc(50% * (1 - sin(0.2turn))) calc(50% * (1 - cos(0.2turn))),
+    calc(50% * (1 + sin(0.2turn))) calc(50% * (1 - cos(0.2turn))),
+    calc(50% * (1 - sin(0.4turn))) calc(50% * (1 - cos(0.4turn)))
+  );
+}
