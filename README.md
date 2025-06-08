@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+## 🧠 แบบฝึกหัด: การใช้ Redux Toolkit จัดการ State ของฟอร์ม
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+โปรเจกต์นี้เป็นการฝึกใช้ Redux Toolkit ในการจัดการข้อมูลฟอร์ม (State Management) โดยเน้นไปที่การ:
 
-Currently, two official plugins are available:
+* รับค่าจากผู้ใช้ผ่านฟอร์ม
+* เก็บค่าลง Redux Store
+* แสดงผลข้อมูลที่กรอกจาก Redux Store
+* ใช้ร่วมกับ localStorage เพื่อเก็บข้อมูลชั่วคราว
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ⚙️ เทคโนโลยีที่ใช้
+* React
+* Redux Toolkit
+* React Redux
+* Ant Design (antd) – ใช้ในการสร้าง UI ฟอร์ม
+* Framer Motion – ใช้เพิ่ม animation
+* LocalStorage – ใช้สำหรับจำค่าฟอร์มชั่วคราว
 
-## Expanding the ESLint configuration
+### 🎯 จุดประสงค์ของการฝึก
+* เรียนรู้การใช้ Redux Toolkit สร้าง Slice สำหรับจัดการข้อมูลฟอร์ม
+* ฝึกเชื่อมต่อ React component กับ Redux Store โดยใช้ useDispatch และ useSelector
+* ฝึกใช้ localStorage ควบคู่กับ Redux สำหรับจำค่าฟอร์มขณะพิมพ์
+* ฝึกใช้งาน Ant Design form ร่วมกับ Redux
+* ฝึกทำ UI ที่มีความเคลื่อนไหวโดยใช้ Framer Motion
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
